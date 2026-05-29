@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Privacy Policy — Parallax Automation</title>
+  <meta name="description" content="Privacy Policy for Parallax Automation. How we collect, use, and protect your personal information."/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --night:    #0E0F1A;
+      --navy:     #111428;
+      --indigo:   #3B4ECC;
+      --indigo-l: #5B6EEE;
+      --teal:     #00CBA8;
+      --white:    #F0F4FF;
+      --muted:    #8A93B8;
+      --border:   rgba(91,110,238,0.18);
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--night);
+      color: var(--white);
+      line-height: 1.7;
+    }
+    body::after {
+      content: '';
+      position: fixed; inset: 0;
+      background-image:
+        linear-gradient(rgba(59,78,204,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(59,78,204,0.03) 1px, transparent 1px);
+      background-size: 44px 44px;
+      pointer-events: none; z-index: 0;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 5%; height: 64px;
+      background: rgba(14,15,26,0.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 0.5px solid var(--border);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-name { font-weight: 600; font-size: 16px; color: var(--white); }
+    .nav-sub  { font-family: 'JetBrains Mono', monospace; font-size: 8px; color: var(--indigo-l); letter-spacing: 3px; display: block; margin-top: 1px; }
+    .nav-back { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--muted); text-decoration: none; letter-spacing: 1px; transition: color 0.2s; }
+    .nav-back:hover { color: var(--white); }
+
+    /* ── PAGE ── */
+    .page {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 120px 5% 100px;
+      position: relative; z-index: 1;
+    }
+
+    /* ── HEADER ── */
+    .page-header { margin-bottom: 56px; }
+    .page-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px; color: var(--teal);
+      letter-spacing: 3px; margin-bottom: 16px; display: block;
+    }
+    h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(36px, 5vw, 52px);
+      font-weight: 400; letter-spacing: -1.5px;
+      line-height: 1.05; color: var(--white);
+      margin-bottom: 20px;
+    }
+    h1 em { font-style: italic; color: var(--teal); }
+    .page-meta {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px; color: var(--muted);
+      letter-spacing: 1.5px;
+    }
+    .page-intro {
+      font-size: 16px; color: var(--muted);
+      font-weight: 300; line-height: 1.8;
+      border-left: 2px solid var(--indigo);
+      padding-left: 20px;
+      margin-top: 28px;
+    }
+
+    /* ── SECTIONS ── */
+    .section { margin-bottom: 48px; }
+    .section-divider {
+      border: none;
+      border-top: 0.5px solid var(--border);
+      margin: 48px 0;
+    }
+    h2 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 18px; font-weight: 600;
+      color: var(--white); margin-bottom: 16px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    h2::before {
+      content: '';
+      display: inline-block;
+      width: 3px; height: 18px;
+      background: var(--teal);
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+    p {
+      font-size: 15px; font-weight: 300;
+      color: var(--muted); line-height: 1.85;
+      margin-bottom: 14px;
+    }
+    p strong { color: var(--white); font-weight: 500; }
+    p a { color: var(--indigo-l); text-decoration: underline; }
+
+    ul {
+      list-style: none;
+      margin: 12px 0 16px;
+      padding: 0;
+    }
+    ul li {
+      font-size: 15px; font-weight: 300;
+      color: var(--muted); line-height: 1.75;
+      padding: 8px 0 8px 20px;
+      border-bottom: 0.5px solid rgba(59,78,204,0.08);
+      position: relative;
+    }
+    ul li:last-child { border-bottom: none; }
+    ul li::before {
+      content: '→';
+      position: absolute; left: 0;
+      color: var(--teal);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+    }
+    ul li strong { color: var(--white); font-weight: 500; }
+
+    /* Info card */
+    .info-card {
+      background: rgba(17,20,40,0.7);
+      border: 0.5px solid var(--border);
+      border-radius: 10px;
+      padding: 24px 28px;
+      margin: 20px 0;
+    }
+    .info-card p { margin-bottom: 6px; }
+    .info-card p:last-child { margin-bottom: 0; }
+
+    /* Contact block */
+    .contact-block {
+      background: rgba(59,78,204,0.08);
+      border: 0.5px solid rgba(59,78,204,0.3);
+      border-radius: 10px;
+      padding: 28px 32px;
+      margin-top: 48px;
+    }
+    .contact-block h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 20px; font-weight: 400;
+      color: var(--white); margin-bottom: 10px;
+    }
+    .contact-block p { margin-bottom: 6px; }
+    .contact-block a { color: var(--teal); text-decoration: none; }
+
+    /* Footer */
+    footer {
+      border-top: 0.5px solid var(--border);
+      padding: 32px 5%;
+      text-align: center;
+      position: relative; z-index: 1;
+    }
+    footer p {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px; color: #2E3450;
+      letter-spacing: 2px; margin-bottom: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="/" class="nav-logo">
+      <svg width="28" height="28" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M2 22 A20 20 0 1 1 34 6" stroke="#3B4ECC" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M6 22 A16 16 0 1 1 32 9" stroke="#5B6EEE" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M10 22 A12 12 0 1 1 30 12" stroke="#00CBA8" stroke-width="2.5" stroke-linecap="round"/>
+        <circle cx="22" cy="22" r="3.5" fill="#3B4ECC"/>
+        <circle cx="34" cy="6" r="2.5" fill="#00CBA8"/>
+      </svg>
+      <div>
+        <span class="nav-name">Parallax</span>
+        <span class="nav-sub">AUTOMATION</span>
+      </div>
+    </a>
+    <a href="/" class="nav-back">← Back to home</a>
+  </nav>
+
+  <!-- PAGE -->
+  <div class="page">
+
+    <div class="page-header">
+      <span class="page-tag">LEGAL · PRIVACY</span>
+      <h1>Privacy <em>Policy</em></h1>
+      <p class="page-meta">LAST UPDATED: JUNE 2025 &nbsp;·&nbsp; PARALLAX AUTOMATION &nbsp;·&nbsp; VANCOUVER, BC, CANADA</p>
+      <p class="page-intro">
+        Parallax Automation is committed to protecting your privacy. This policy explains what personal information we collect, how we use it, and how you can control it. We keep it plain — no legalese you need a lawyer to decode.
+      </p>
+    </div>
+
+    <!-- 1. Who we are -->
+    <div class="section">
+      <h2>Who we are</h2>
+      <p>Parallax Automation is an IT consultancy and automation services company based in Vancouver, British Columbia, Canada. We provide IT management, Microsoft 365 and Google Workspace administration, and AI workflow automation services to small and mid-sized businesses.</p>
+      <div class="info-card">
+        <p><strong>Business name:</strong> Parallax Automation</p>
+        <p><strong>Location:</strong> Vancouver, BC, Canada</p>
+        <p><strong>Website:</strong> parallaxautomate.com</p>
+        <p><strong>Contact:</strong> <a href="mailto:hello@parallaxautomate.com">hello@parallaxautomate.com</a></p>
+      </div>
+    </div>
+
+    <hr class="section-divider"/>
+
+    <!-- 2. What we collect -->
+    <div class="section">
+      <h2>What information we collect</h2>
+      <p>We only collect information you voluntarily provide to us. This includes:</p>
+      <ul>
+        <li><strong>Contact information</strong> — your name, email address, and phone number when you fill out a contact or lead form, including forms on Facebook and Instagram ads.</li>
+        <li><strong>Business information</strong> — your company name, size, and industry if you provide it during an enquiry.</li>
+        <li><strong>Message content</strong> — anything you write in a contact form, email, or free-text field describing your business needs.</li>
+        <li><strong>Website usage data</strong> — basic analytics such as pages visited and time on site, collected via standard web analytics tools.</li>
+      </ul>
+      <p>We do <strong>not</strong> collect sensitive personal information such as financial data, government ID numbers, or health information.</p>
+    </div>
+
+    <hr class="section-divider"/>
+
+    <!-- 3. How we use it -->
+    <div class="section">
+      <h2>How we use your information</h2>
+      <p>When you submit a form — including through our Facebook or Instagram ads — we use your information to:</p>
+      <ul>
+        <li><strong>Contact you to book your discovery call</strong> — we'll reach out by phone or email within 24 hours to schedule the free consultation you requested.</li>
+        <li><strong>Respond to your enquiry</strong> — to answer questions and provide the information you asked for.</li>
+        <li><strong>Send relevant follow-up communications</strong> — occasional emails about our services if you've expressed interest. You can opt out at any time.</li>
+        <li><strong>Improve our services and marketing</strong> — understanding what brought you to us helps us serve clients better.</li>
+      </ul>
+      <p>We will <strong>never</strong> sell your personal information to third parties. We do not share your data with anyone except the tools we use to operate our business (listed below).</p>
+    </div>
+
+    <hr class="section-divider"/>
+
+    <!-- 4. Third party tools -->
+    <div class="section">
+      <h2>Third-party tools we use</h2>
+      <p>We use a small number of trusted tools to manage our business. Your information may pass through:</p>
+      <ul>
+        <li><strong>Meta (Facebook/Instagram)</strong> — lead forms on our ads are managed through Meta's platform. Meta's own privacy policy applies to data collected through their platform.</li>
+        <li><strong>Google Workspace</strong> — we use Gmail and Google Drive to manage client communications and project documents.</li>
+        <li><strong>n8n</strong> — our workflow automation platform may process contact data to route enquiries internally.</li>
+      </ul>
+      <p>Each of these providers is bound by their own privacy policies and data protection obligations.</p>
+    </div>
+
+    <hr class="section-divider"/>
+
+    <!-- 5. How long we keep it -->
+    <div class="section">
+      <h2>How long we keep your information</h2>
+      <p>We keep your contact information for as long as there is an active business relationship or enquiry. If you ask us to delete your information, we will do so within 30 days unless we are legally required to retain it.</p>
+    </div>
+
+    <hr class="section-divider"/>
+
+    <!-- 6. Your rights -->
+    <div class="section">
+      <h2>Your rights</h2>
+      <p>Under Canadian privacy law (PIPEDA) and applicable regulations, you have the right to:</p>
+      <ul>
+        <li><strong>Access</strong> the personal information we hold about you.</li>
+        <li><strong>Correct</strong> any inaccurate information.</li>
+        <li><strong>Delete</strong> your information — simply email us and we'll remove it within 30 days.</li>
+        <li><strong>Withdraw consent</strong> to receive marketing communications at any time by replying "unsubscribe" to any email we send.</li>
+        <li><strong>Ask questions</strong> about how your data is handled.</li>
+      </ul>
+      <p>To exercise any of these rights, email us at <a href="mailto:hello@parallaxautomate.com">hello@parallaxautomate.com</a>.</p>
+    </div>
+
+    <hr class="section-divider"/>
+
+    <!-- 7. Cookies -->
+    <div class="section">
+      <h2>Cookies &amp; website tracking</h2>
+      <p>Our website may use cookies for basic analytics — understanding which pages are visited and how people find us. We do not use cookies for advertising retargeting on our own website at this time.</p>
+      <p>If you use Facebook or Instagram, Meta may use cookies and pixel data according to their own policies when you interact with our ads.</p>
+    </div>
+
+    <hr class="section-divider"/>
+
+    <!-- 8. Updates -->
+    <div class="section">
+      <h2>Changes to this policy</h2>
+      <p>We may update this policy from time to time. When we do, we'll update the "last updated" date at the top. We won't make material changes without reasonable notice.</p>
+    </div>
+
+    <!-- Contact -->
+    <div class="contact-block">
+      <h3>Questions about your privacy?</h3>
+      <p>We're a small business and we take this seriously. If you have any questions about how we handle your information, just ask.</p>
+      <p>📧 <a href="mailto:hello@parallaxautomate.com">hello@parallaxautomate.com</a></p>
+      <p>🌐 <a href="https://parallaxautomate.com">parallaxautomate.com</a></p>
+      <p>📍 Vancouver, BC, Canada</p>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>© 2025 PARALLAX AUTOMATION · VANCOUVER, BC · AUTOMATIONS WITH A 'HUMAN' TOUCH</p>
+  </footer>
+
+</body>
+</html>
